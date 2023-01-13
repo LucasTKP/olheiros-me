@@ -7,7 +7,7 @@ import iconGoogle from '../../../../public/icons/google.svg'
 import iconEyeOn from '../../../../public/icons/eyeOn.svg' 
 import iconEyeOff from '../../../../public/icons/eyeOff.svg' 
 
-function page(props:any) {
+function Page(props:any) {
   const [user, setUser] = useState({email:'', password:''})
   const [eye, setEye] = useState(false)
   return (
@@ -58,4 +58,4 @@ function page(props:any) {
   )
 }
 
-export default page
+export default Page
