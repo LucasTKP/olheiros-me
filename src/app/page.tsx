@@ -1,6 +1,16 @@
+'use client'
+import { signOut } from "firebase/auth";
+import { auth } from '../../configFireBase'
+
 export default function Page(){
-    const a:string = "a"
+    function Exit(){
+        signOut(auth).then(() => {
+            // Sign-out successful.
+            }).catch((error) => {
+            // An error happened.
+            });
+    }
     return (
-        <p className="text-[50px] font-poppins">Teste</p>
+        <p onClick={() => Exit()} className="text-[50px] text-black font-poppins">Teste</p>
     )
   }

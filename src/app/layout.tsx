@@ -1,5 +1,6 @@
 import "../../styles/globals.css"
 import { Nunito, Staatliches } from '@next/font/google'
+import { useRouter } from 'next/navigation';
 
 const nunito = Nunito({
   display: 'swap',
@@ -12,6 +13,8 @@ const staatliches = Staatliches({
   weight: ['400'],
   variable: '--font-staatliches',
 })
+
+
 
 export default function RootLayout({children,}: {children: React.ReactNode}) {
   return (
