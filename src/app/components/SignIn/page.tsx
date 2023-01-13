@@ -1,13 +1,13 @@
 'use client'
 import React, {useState} from 'react'
-import PersonSignIn from '../../../../public/images/PersonSignIn.png'
+import PersonSignIn from '../../../../public/images/personSignIn.png'
 import Image from 'next/image'
 import iconEmail from '../../../../public/icons/email.svg' 
 import iconGoogle from '../../../../public/icons/google.svg' 
 import iconEyeOn from '../../../../public/icons/eyeOn.svg' 
 import iconEyeOff from '../../../../public/icons/eyeOff.svg' 
 
-function page(props:any) {
+function Page(props:any) {
   const [user, setUser] = useState({email:'', password:''})
   const [eye, setEye] = useState(false)
   return (
@@ -58,4 +58,4 @@ function page(props:any) {
   )
 }
 
-export default page
+export default Page
