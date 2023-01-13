@@ -1,6 +1,6 @@
 'use client'
 import React, {useState} from 'react'
-import PersonSignIn from '../../../../public/images/PersonSignIn.png'
+import PersonSignIn from '../../../../public/images/personSignIn.png'
 import Image from 'next/image'
 import iconEmail from '../../../../public/icons/email.svg' 
 import iconGoogle from '../../../../public/icons/google.svg' 
