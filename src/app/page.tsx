@@ -1,6 +1,7 @@
 'use client'
 import { signOut } from "firebase/auth";
 import { auth } from '../../configFireBase'
+import NavBar from './components/NavBar'
 
 export default function Page(){
     function Exit(){
@@ -11,6 +12,6 @@ export default function Page(){
             });
     }
     return (
-        <p onClick={() => Exit()} className="text-[50px] text-black font-poppins">Teste</p>
+        <NavBar />
     )
   }

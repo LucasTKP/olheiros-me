@@ -15,7 +15,7 @@ const staatliches = Staatliches({
 
 export default function RootLayout({children,}: {children: React.ReactNode}) {
   return (
-    <html>
+    <html className="bg-primary">
       <head />
       <body className={`text-white font-nunito ${nunito.variable} ${staatliches.variable} font-sans`}>{children}</body>
     </html>
