@@ -4,17 +4,16 @@ import Image from 'next/image'
 import iconName from '../../../public/icons/name.svg' 
 import iconEmail from '../../../public/icons/email.svg' 
 import iconPassword from '../../../public/icons/password.svg' 
-import iconGoogle from '../../../public/icons/google.svg' 
 import {auth, db }from '../../../configFireBase'
 import { createUserWithEmailAndPassword } from "firebase/auth";
 import { ToastContainer, toast  } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import ErrorFirebase from '../components/errorFireBase'
-import { doc, setDoc, getDoc, collection, query, where, getDocs  } from "firebase/firestore"; 
+import { doc, setDoc, collection, query, where, getDocs  } from "firebase/firestore"; 
 import { useRouter } from 'next/navigation';
 import { onAuthStateChanged } from "firebase/auth";
-import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 import SignIn from '../components/SignIn/page'
+import GoogleProvider from '../components/googleProvider'
 
 
 function FormSignUp() {
@@ -29,22 +28,27 @@ function FormSignUp() {
     const q = query(collection(db, "users"), where("email", "==", email));
     const querySnapshot = await getDocs(q);
     let dataUser: any = undefined;
-    console.log(querySnapshot)
     querySnapshot.forEach((doc) => {
       dataUser = doc.data()
     });
 
-    if(dataUser.provider === "Google"){
-      return toast.error("Este email ja foi cadastrado utilizando o google como provedor.")
-    } else {
+    if(dataUser === undefined){
       createUserWithEmailAndPassword(auth, email, password)
-        .then((userCredential) => {
-          CreateUserDb({id: userCredential.user.uid, name: user.name, email: email, password: password, provider: "Traditional"})
-        })
-        .catch((error) => {
-          ErrorFirebase(error)
-        });
+      .then((userCredential) => {
+        CreateUserDb({id: userCredential.user.uid, name: user.name, email: email, password: password, provider: "Traditional"})
+      })
+      .catch((error) => {
+        ErrorFirebase(error)
+      });
+    }  else {
+      if(dataUser.provider === "Google"){
+        return toast.error("Este email ja foi cadastrado utilizando o google como provedor.")
+      } else {
+        return toast.error("Este email ja foi cadastrado.")
+      }
     }
+
+
   }
 
   async function CreateUserDb(props: any){
@@ -52,7 +56,6 @@ function FormSignUp() {
       id: props.id,
       name: props.name,
       email: props.email,
-      password: props.password,
       provider: props.provider
   });
   toast.success("Conta criada com sucesso!")
@@ -65,28 +68,6 @@ function FormSignUp() {
         }
       });
     },[auth, router])
-
-  async function SignInGoogle(){
-    const provider = new GoogleAuthProvider();
-    auth.languageCode = 'it';
-    signInWithPopup(auth, provider)
-    .then((result) => {
-      const user = result.user;
-      VerifyUser(user)
-    }).catch((error) => {
-      ErrorFirebase(error)
-    });
-  }
-
-  async function VerifyUser(user:any){
-    const docRef = doc(db, "users", user.uid);
-    const docSnap = await getDoc(docRef);
-
-    if (docSnap.exists()) {
-    } else {
-      CreateUserDb({id: user.uid, name: user.email, email: user.email, password: "", provider: "Google"})
-    }
-  }
 
   return (
     <div className='text-[#D0CEF6] mt-[30px]'>
@@ -110,7 +91,7 @@ function FormSignUp() {
               <input required minLength={8} onChange={(text) => setUser({...user, password: text.target.value})} maxLength={25} type='password' placeholder="Digite sua senha" className='bg-transparent outline-none text-[20px] placeholder-[#D0CEF6] w-[90%]'/>
               <Image src={iconPassword} priority alt="Imagem de fundo" className="w-[30px] h-[33px] max-md:w-[27px] max-md:height-[29px] max-lsm:w-[25px] max-lsm:h-[27px]"/>
           </label>
-          <p className='self-end cursor-pointer'>Entrar como visitante</p>
+          <p onClick={() => router.push('/')} className='self-end cursor-pointer'>Entrar como visitante</p>
           <div className='flex justify-center mt-[30px]'>
               <button type='submit'  className='flex items-center justify-center text-[25px]  bg-purple-800/50 border-purple-800 border-[2px] rounded-[10px] px-[10px] py-[5px] max-md:text-[23px] max-lsm:text-[22px]' >Cadastrar</button>
           </div>
@@ -123,11 +104,7 @@ function FormSignUp() {
       </div>
 
       <div className='flex justify-between px-[20px] mt-[20px] items-center pb-[20px]'>
-          <button type='button' onClick={() => SignInGoogle()}  className='gap-[10px] flex items-center justify-center text-[25px] max-lsm:text-[20px] bg-purple-800/50 border-purple-800 border-[2px] rounded-[10px] px-[10px] py-[5px] max-md:text-[23px]'>
-              Google
-              <Image src={iconGoogle} alt="Logo Google" />
-          </button>
-
+          <GoogleProvider />
           <p onClick={() => setSignIn(true)} className='text-[20px] text-center cursor-pointer'>Fazer Login</p>
       </div>
     </div>
