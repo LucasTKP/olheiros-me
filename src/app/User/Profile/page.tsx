@@ -7,7 +7,7 @@ import Image from 'next/image'
 import ChangeImage from './changeWallPaper';
 import { toast } from 'react-toastify';
 
-function page() {
+function Page() {
   const params = useSearchParams()
   const id = params.get("id")
   const [urlImages, setUrlImages] = useState({nameProfile:"",  profile:"", nameWallPaper:"", wallPaper:""})
@@ -38,4 +38,4 @@ function page() {
   )
 }
 
-export default page
+export default Page
