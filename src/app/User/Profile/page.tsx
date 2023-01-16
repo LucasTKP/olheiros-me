@@ -28,8 +28,8 @@ function Page() {
   return (
     <section className='w-full flex justify-center'>
       <div className='w-[80%] max-md:w-[95%]'>
-        <div className='w-full h-[200px] rounded-[8px] bg-white relative'>
-          {urlImages.wallPaper.length > 0 ? <Image src={urlImages.wallPaper} width={1800} height={200}  className='w-[100%] h-[200px] rounded-[8px] object-cover object-center' alt="Wallpaper do usuário"/> : "</>"}
+        <div className='aspect-[16/3.3] rounded-[8px] bg-white relative'>
+          {urlImages.wallPaper.length > 0 ? <img src={urlImages.wallPaper} className='w-full h-full rounded-[8px]' alt="Wallpaper do usuário"/> : ""}
           <ChangeImage setUrlImages={setUrlImages} urlImages={urlImages} id={id}/>
         </div>
 
