@@ -35,7 +35,6 @@ function Page(props:any) {
 
   } 
 
-
   async function SignIn(e: { preventDefault: () => void }){
     e.preventDefault()
     const email = user.email
@@ -61,7 +60,7 @@ function Page(props:any) {
   }
 
   return (
-    <section className='text-white w-screen h-screen fixed bg-black/50 top-0 left-0 backdrop-blur-[6px] flex justify-center items-center '>
+    <section className='text-white w-screen h-screen fixed bg-black/50 top-0 left-0 backdrop-blur-[6px] flex justify-center items-center z-50'>
       <div className='w-[500px] max-sm:w-[90%] h-[620px] max-sm:h-[570px]  max-lsm:h-[550px] bg-[#7016B0] rounded-[10px] relative flex flex-col'>
         <div onClick={() => props.setSignIn(false)} className='cursor-pointer'>
           <div className='w-[40px] h-[4px] bg-white rounded-[2px] rotate-45 absolute top-[25px] right-[5px]'></div>

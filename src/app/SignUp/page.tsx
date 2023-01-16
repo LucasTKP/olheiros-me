@@ -5,7 +5,6 @@ import Logo from '../../../public/icons/logo.svg'
 import FormSignUp from './formSignUp'
 
 export default function SignUp(){
-    const a:string = "a"
     return (
         <section className="w-full min-h-screen h-full bg-primary flex max-xl:justify-center relative">
             <div className="w-[50%] h-full max-xl:w-[60%] max-lg:w-[80%] max-md:w-[100%] z-10">
