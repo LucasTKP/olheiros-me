@@ -11,14 +11,14 @@ module.exports = {
     extend: {
       fontFamily: {
         nunito: ['var(--font-nunito)', ...fontFamily.sans],
-        staatliches: ['var(--font-staatliches)', ...fontFamily.sans]
+        staatliches: ['var(--font-staatliches)', ...fontFamily.sans],
+        megrim: ['var(--font-megrim)', ...fontFamily.sans]
       },
-      
       colors:{
         'primary': '#03032C',
         'secondary': '#360857',
-        'terciary': '#3A385B'
-      }
+        'terciary': '#3A385B',
+      },
     },
     screens: {
       "lsm": "450px",
