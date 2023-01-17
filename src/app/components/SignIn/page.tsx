@@ -66,7 +66,7 @@ function Page(props:any) {
           <div className='w-[40px] h-[4px] bg-white rounded-[2px] rotate-45 absolute top-[25px] right-[5px]'></div>
           <div className='w-[40px] h-[4px] bg-white rounded-[2px] -rotate-45 absolute top-[25px] right-[5px]'></div>
         </div>
-        <Image src={PersonSignIn} alt={"Pessoa jogando."} className="w-[400px] h-[450px] max-sm:h-[400px] self-end bg-red"/>
+        <Image src={PersonSignIn} alt={"Pessoa jogando."} className="w-[400px] h-[450px] max-sm:h-[400px] self-end"/>
 
         <div className='w-[94%] left-[3%]  absolute bg-white/30 bottom-[10px] rounded-[10px] backdrop-blur-[20px] px-[10px]'>
           <form onSubmit={SignIn} autoComplete="off" className='flex flex-col'>

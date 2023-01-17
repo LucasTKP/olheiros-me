@@ -10,7 +10,6 @@ import { auth, db }from '../../../configFireBase'
 import { onAuthStateChanged } from "firebase/auth";
 import { useRouter } from 'next/navigation'
 import SignIn from '../components/SignIn/page'
-import { signOut } from "firebase/auth"; 
 import { getDoc, doc } from "firebase/firestore";
 import Logo from '../../../public/icons/logo.svg'
 import { toast } from 'react-toastify';
@@ -44,14 +43,6 @@ function NavBar() {
         }
     }
 
-    function Exit(){
-        signOut(auth).then(() => {
-        router.push('/SignUp')
-        }).catch((error) => {
-        // An error happened.
-        });
-    }
-
   return (
     <section>
         <div className='flex items-center justify-center mt-[10px]'>
@@ -59,17 +50,17 @@ function NavBar() {
             <p className='font-megrim text-[35px]'>lheiros-me</p>
         </div>
         {signIn ? <SignIn setSignIn={setSignIn}/> : <></>}
-        <button onClick={() => setMenu(!menu)} className={`mt-[20px] z-40 absolute top-0 left-[40px] max-lg:left-[35px] max-md:left-[33px] max-sm:left-[30px] ${menu ? "py-[10px]" : ""}`} type='button'>
-            <div className={`w-[40px] h-[4px] bg-white duration-500 rounded-[100px] ${menu ? "-rotate-45" : ""}`}/>
-            <div className={`w-[40px] h-[4px] bg-white mt-[5px] duration-500 rounded-[100px] ${menu ? "hidden" : ""}`}/>
-            <div className={`w-[40px] h-[4px] bg-white mt-[5px] duration-500 rounded-[100px] ${menu ? "rotate-45 mt-[-4px]" : ""}`} />
+        <button onClick={() => setMenu(!menu)} className={`mt-[20px] z-40 absolute top-0 left-[40px] max-lg:left-[35px] max-md:left-[33px] max-sm:left-[30px] ${menu ? "py-[10px]" : "max-sm:left-[10px]"}`} type='button'>
+            <div className={`w-[40px] max-lsm:w-[30px] h-[4px] bg-white duration-500 rounded-[100px] ${menu ? "-rotate-45" : ""}`}/>
+            <div className={`w-[40px] max-lsm:w-[30px] h-[4px] bg-white mt-[5px] duration-500 rounded-[100px] ${menu ? "hidden" : ""}`}/>
+            <div className={`w-[40px] max-lsm:w-[30px] h-[4px] bg-white mt-[5px] duration-500 rounded-[100px] ${menu ? "rotate-45 mt-[-4px]" : ""}`} />
         </button>
-        <div className={`w-[120px] max-lg:w-[110px]  max-md:w-[105px]  max-sm:w-[100px] h-screen flex-col fixed bg-terciary top-0 duration-500 flex items-center ${menu ? "left-0" : "left-[-150px]"}`}>
+        <div className={`w-[120px] max-lg:w-[110px]  max-md:w-[105px]  max-sm:w-[100px] h-screen flex-col fixed bg-terciary z-30 top-0 duration-500 flex items-center ${menu ? "left-0" : "left-[-150px]"}`}>
         <Tooltip.Provider>
             
             <Tooltip.Root>
                 <Tooltip.Trigger asChild className={`cursor-pointer`}>
-                    <Image src={urlImage} width={100} height={100} onClick={() => Exit()} className="w-[100px] h-[100px] max-lg:w-[90px] max-lg:h-[90px] max-md:w-[80px] max-md:h-[80px] max-sm:w-[70px] max-sm:h-[70px] bg-white mt-[70px] rounded-full" alt="Imagem de perfil"/>
+                    <Image src={urlImage} width={100} height={100} className="border-[2px] border-white w-[100px] h-[100px] max-lg:w-[90px] max-lg:h-[90px] max-md:w-[80px] max-md:h-[80px] max-sm:w-[70px] max-sm:h-[70px] bg-white mt-[70px] rounded-full" alt="Imagem de perfil"/>
                 </Tooltip.Trigger>
                 <Tooltip.Portal>
                     <Tooltip.Content  side="right" sideOffset={10}>
