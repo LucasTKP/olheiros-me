@@ -37,10 +37,15 @@ function GoogleProvider(){
         name: props.name,
         email: props.email,
         provider: props.provider,
+        description:"Edite sua descrição",
         nameImage: "padrao.png",
         urlImage: "https://firebasestorage.googleapis.com/v0/b/olheiros-me.appspot.com/o/ImageProfile%2Fpadrao.jpg?alt=media&token=0c7a6d67-6118-407c-a2fe-1664dcbfcc4c",
         nameWallPaper: "padrao.png",
-        urlWallPaper: "https://firebasestorage.googleapis.com/v0/b/olheiros-me.appspot.com/o/WallPapers%2Fpadrao.jpg?alt=media&token=4ffe0431-fcb9-4930-849d-6347008a349a"
+        urlWallPaper: "https://firebasestorage.googleapis.com/v0/b/olheiros-me.appspot.com/o/WallPapers%2Fpadrao.jpg?alt=media&token=4ffe0431-fcb9-4930-849d-6347008a349a",
+        urlInstagram: "",
+        urlTwitter: "",
+        urlTwitch:"",
+
     });
     toast.success("Conta criada com sucesso!")
   }

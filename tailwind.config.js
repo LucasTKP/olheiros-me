@@ -18,6 +18,10 @@ module.exports = {
         'primary': '#03032C',
         'secondary': '#360857',
         'terciary': '#3A385B',
+        'yellow': '#DAA520',
+        'blue': '#0096FF',
+        'red': '#DA204D',
+        'purple': '#360857'
       },
     },
     screens: {
