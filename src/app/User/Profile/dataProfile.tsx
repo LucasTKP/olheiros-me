@@ -9,7 +9,7 @@ import { useRouter } from 'next/navigation'
 import { signOut } from "firebase/auth"; 
 import Link from 'next/link'
 
-function dataProfile(props:any) {
+function DataProfile(props:any) {
     const router = useRouter()
 
     function Exit(){
@@ -48,4 +48,4 @@ function dataProfile(props:any) {
   )
 }
 
-export default dataProfile
+export default DataProfile
