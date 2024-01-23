@@ -1,37 +1,36 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+<h1 align="center">Olheiros-Me</h1>
+<p align="center">Este projeto ainda esta sendo desenvolvido</p> <br />
 
-## Getting Started
+### 🔗 Links:
+<a href="https://github.com/LucasTKP/olheiros-me">Projeto Olheiros-Me</a></br>
+<a href="https://olheiros-me.vercel.app/">Deploy</a></br>
 
-First, run the development server:
+</br>
+</br>
 
-```bash
-npm run dev
-# or
-yarn dev
-```
+### 💻 Projeto:
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Este projeto consiste em uma rede social de jogadores, o usuário deve colocar vídeos mostrando suas habilidades em jogos online. Assim quando um olheiro precisar de um jogador para algum time, ele analisa o perfil do player e entra em contato.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+<br /> <br />
 
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+### 🎯 Objetivo:
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+Ajudar a comunidade gamer que tem vontade de ser profissional ou de criar um time.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+<br /> <br />
 
-## Learn More
+### ⚙️ Tecnologias:
 
-To learn more about Next.js, take a look at the following resources:
+- Next
+- Tailwind
+- Firebase
+- GitHub
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+  <br /> <br />
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+### 📷 Tela principal:
 
-## Deploy on Vercel
+![Screenshot_4](https://github.com/LucasTKP/olheiros-me/assets/101598532/d4cca41a-1583-456e-bafe-c72f7af8e8a3)
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
-# olheiros-me
+<br />
